@@ -1,0 +1,9 @@
+/* Hide Streamlit Branding */
+/* #MainMenu {visibility: hidden;}
+header{visibility: hidden;}
+footer{visibility: hidden;} */
+
+.big-font {
+    font-size: 180px;
+    color: blueviolet;
+}
