@@ -8,14 +8,7 @@ st.set_page_config(page_title = 'ECP PROJECT', page_icon = ':zap:', layout = 'wi
 
 # Firebase Configuration Key
 firebaseConfig = {
-    'apiKey': "AIzaSyDsY0-hfeVI2roagdIlzERYUWEHHDTAPF0",
-    'authDomain': "bikebuddy0118.firebaseapp.com",
-    'projectId': "bikebuddy0118",
-    'databaseURL': "https://bikebuddy0118-default-rtdb.europe-west1.firebasedatabase.app/",
-    'storageBucket': "bikebuddy0118.appspot.com",
-    'messagingSenderId': "899355751515",
-    'appId': "1:899355751515:web:b9c611f8645eec9c8ebb7e",
-    'measurementId': "G-2TS8BDR3S0"
+   # api keys
 }
 
 # Firebase Authentication
@@ -26,16 +19,6 @@ auth = firebase.auth()
 db = firebase.database()
 storage = firebase.storage()
 
-# Streamlit Session State Control
-# class SessionState:
-#     def __init__(self):
-#         self.user_status = "logged_out"
-
-# @st.cache_data()
-# def get_session_state():
-#     return SessionState()
-
-# session_state = get_session_state()
 if "user_status" not in st.session_state:
     st.session_state.user_status = 'logged_out'
 
