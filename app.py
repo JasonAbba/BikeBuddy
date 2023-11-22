@@ -12,18 +12,18 @@ import string
 from PIL import Image
 
 # Streamlit Imp Variables
-st.set_page_config(page_title = 'BikeBuddy', page_icon = '⚡', layout = 'wide')
+st.set_page_config(page_title = 'TEST ENVT', page_icon = '⛔', layout = 'wide')
 
 # Firebase Configuration Key
 firebaseConfig = {
-    'apiKey': st.secrets["apiKey"],
-    'authDomain': st.secrets["authDomain"],
-    'projectId': st.secrets["projectId"],
-    'databaseURL': st.secrets["databaseURL"],
-    'storageBucket': st.secrets["storageBucket"],
-    'messagingSenderId': st.secrets["messagingSenderId"],
-    'appId': st.secrets["appId"],
-    'measurementId': st.secrets["measurementId"]
+    'apiKey': "AIzaSyDsY0-hfeVI2roagdIlzERYUWEHHDTAPF0",
+    'authDomain': "bikebuddy0118.firebaseapp.com",
+    'projectId': "bikebuddy0118",
+    'databaseURL': "https://bikebuddy0118-default-rtdb.europe-west1.firebasedatabase.app/",
+    'storageBucket': "bikebuddy0118.appspot.com",
+    'messagingSenderId': "899355751515",
+    'appId': "1:899355751515:web:b9c611f8645eec9c8ebb7e",
+    'measurementId': "G-2TS8BDR3S0"
 }
 
 # Firebase Authentication
@@ -49,12 +49,11 @@ def local_css(file_name):
 # Define a regular expression pattern for a basic email validation
 def is_valid_email(email):
     email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-    return bool(re.match(email_pattern, email))
+    return re.match(email_pattern, email) is not None
 
 # Define criteria for password validation
 def is_valid_password(password):
-    password_pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
-    return bool(re.match(password_pattern, password))
+    return len(password) >= 7
 
 # Login and Sign Up Form
 def userauth():
@@ -94,8 +93,6 @@ def userauth():
                 except Exception as e:
                     print("\n\n-->", e)
                     st.warning("Incorrect Email or Password.")
-            else:
-                st.warning("Incorrect Email or Password.")
         
         # Sign Up
         elif choice == "Sign Up":
@@ -108,12 +105,7 @@ def userauth():
             blood_group = st.sidebar.selectbox("Blood Group", blood_types)
             mob_number = st.sidebar.text_input("Mobile Number")
             submit = st.sidebar.button("Sign Up")
-            if is_valid_email(email) == False:
-                st.warning('Email is not valid.')
-
-            if is_valid_password(password) == False:
-                st.warning('Email is not valid.')
-
+            
             if submit:
                 try:
                     user = auth.create_user_with_email_and_password(email, password)
@@ -171,6 +163,9 @@ def tab1_content():
         if log_btn:
             log_status = check_log(widgets_list)
             if log_status:
+                #! feed details in firebase
+                #! feed details in firebase
+                #! feed details in firebase
                 ride_date = json.dumps(ride_date.isoformat())
                 ride_log = {
                     'Starting_Location' : starting_loc,
