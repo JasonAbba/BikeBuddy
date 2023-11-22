@@ -16,14 +16,14 @@ st.set_page_config(page_title = 'BikeBuddy', page_icon = '⚡', layout = 'wide')
 
 # Firebase Configuration Key
 firebaseConfig = {
-    'apiKey': "****************",
-    'authDomain': "****************",
-    'projectId': "****************",
-    'databaseURL': "****************",
-    'storageBucket': "****************",
-    'messagingSenderId': "****************",
-    'appId': "****************",
-    'measurementId': "****************"
+    'apiKey': st.secrets["apiKey"],
+    'authDomain': st.secrets["authDomain"],
+    'projectId': st.secrets["projectId"],
+    'databaseURL': st.secrets["databaseURL"],
+    'storageBucket': st.secrets["storageBucket"],
+    'messagingSenderId': st.secrets["messagingSenderId"],
+    'appId': st.secrets["appId"],
+    'measurementId': st.secrets["measurementId"]
 }
 
 # Firebase Authentication
