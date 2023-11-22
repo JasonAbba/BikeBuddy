@@ -12,7 +12,7 @@ import string
 from PIL import Image
 
 # Streamlit Imp Variables
-st.set_page_config(page_title = 'TEST ENVT', page_icon = '⛔', layout = 'wide')
+st.set_page_config(page_title = 'TEST ENVT', page_icon = '⚡', layout = 'wide')
 
 # Firebase Configuration Key
 firebaseConfig = {
