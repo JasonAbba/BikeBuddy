@@ -377,6 +377,7 @@ def tab3_content():
                 
                 user = st.session_state['user_id']
                 db.child("--Created Rides--").child(ride_code).set(ride_details)
+                st.info('Your Ride Code: ', ride_code)
                 st.toast('A ride has been created succesfully!', icon='✅')
                 
     with col2:
